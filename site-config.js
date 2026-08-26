@@ -14,13 +14,11 @@ window.SITE_CONFIG = {
       photoAlt: "Portrait of Apostolos Varelas"
     }
   ],
-  repositoryUrl: "https://github.com/ApostolosVarelas/AI_Beauty_Contest/tree/9f065b24f8082dedc1baf0bafb7968305b76584a",
   reportUrl: "assets/report/AI_Beauty_Contests_v2.pdf",
-  demoUrl: "",
   kpis: {
-    missionCompletion: null,
-    humanIntervention: null,
-    falsePositive: null,
-    falseNegative: null
+    missionCompletion: "20 / 20",
+    humanIntervention: "0% each",
+    falsePositive: "0 / 10",
+    falseNegative: "0 / 10"
   }
 };

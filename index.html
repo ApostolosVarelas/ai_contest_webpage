@@ -6,6 +6,7 @@
   <meta name="description" content="LLM-driven mission control for guarded ROS 2 robotic inspection.">
   <meta name="theme-color" content="#07111f">
   <title>LLM-Driven Mission Control | AI Beauty Contest 2026</title>
+  <link rel="icon" href="assets/team/duckster-team-icon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <script src="site-config.js" defer></script>
   <script src="app.js" defer></script>
@@ -136,16 +137,16 @@
     <section id="panel-initiative" class="page-panel" role="tabpanel" aria-labelledby="tab-initiative" data-panel="initiative" hidden>
       <div class="page-hero">
         <div><span class="criterion-weight">Criterion 01 · 15%</span><h1>Initiative Description<br>and Value</h1></div>
-        <p>Make recurring warehouse inspections easier to request, supervise and document—without granting a language model physical control authority.</p>
+        <p>Make recurring inspections of configured operational sites easier to request, supervise and document—without granting a language model physical control authority.</p>
       </div>
       <div class="content-shell section-stack">
         <section class="split-feature">
-          <div class="feature-image image-warehouse"><img src="assets/bologna-interporto.webp" alt="Satellite view of the Bologna Interporto logistics complex"><span>Target environment · Logistics operations</span></div>
-          <div class="feature-copy"><span class="section-index">THE PROBLEM</span><h2>Operational knowledge and robotic control speak different languages.</h2><p>Warehouse teams understand what must be inspected. Executing that objective typically requires ROS 2 expertise, semantic maps, navigation interfaces, sensor configuration and robot-specific commands.</p><blockquote>Enable a non-robotics operator to request, supervise and document a bounded inspection while deterministic software retains execution authority.</blockquote></div>
+          <div class="feature-image image-project"><img src="assets/demo-highlight-reel-poster.webp" alt="Four-robot mission-control workspace showing planned routes, task activity, LiDAR views and robot cameras"></div>
+          <div class="feature-copy"><span class="section-index">THE PROBLEM</span><h2>Operational knowledge and robotic control speak different languages.</h2><p>Facility and site teams understand what must be inspected. Structured indoor facilities and bounded outdoor areas can both require recurring inspection, yet executing those objectives typically requires ROS 2 expertise, semantic maps, navigation interfaces, sensor configuration and robot-specific commands.</p><blockquote>Enable a non-robotics operator to request, supervise and document a bounded inspection while deterministic software retains execution authority.</blockquote></div>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">TARGET CUSTOMER</span><h2>A focused workflow for warehouse inspection</h2></div><p>The initial customer is a warehouse or logistics operator with recurring visual inspections, defined operational areas and an automation team or integration partner.</p></div>
+          <div class="section-heading"><div><span class="section-index">TARGET CUSTOMER</span><h2>A focused workflow for recurring site inspection</h2></div><p>The initial customer is a facility, infrastructure or site operator with recurring visual inspections, defined operational areas and an automation team or integration partner. Indoor candidates include warehouses, industrial buildings and utility rooms; bounded outdoor candidates include logistics yards, agricultural areas, industrial perimeters and infrastructure sites. The warehouse is the first implementation example, not the product boundary.</p></div>
           <div class="method-table" role="table" aria-label="Target stakeholders and operational needs">
             <div role="row"><strong role="columnheader">Stakeholder</strong><strong role="columnheader">Operational need</strong><strong role="columnheader">Application response</strong></div>
             <div role="row"><span role="cell">Operations, maintenance or safety operator</span><span role="cell">Request and supervise an inspection without constructing ROS 2 commands.</span><span role="cell">Natural-language missions, visible progress, camera and LiDAR views, and independent human controls.</span></div>
@@ -363,9 +364,8 @@
             <video autoplay muted loop playsinline poster="assets/demo-highlight-reel-poster.webp" aria-label="AI Beauty Contest platform demonstration highlight reel">
               <source src="assets/demo-highlight-reel.mp4" type="video/mp4">
             </video>
-            <div class="video-badge"><span></span> Actual platform footage</div>
           </div>
-          <div class="demo-copy"><span class="section-index">REPRESENTATIVE MISSION</span><h2>Receiving-dock inspection</h2><blockquote>“Inspect the receiving dock for barrels, save the evidence and produce a findings report.”</blockquote><p>The operator observes plan acceptance, route execution, camera evidence, mission progress and the terminal findings artifact from one browser workspace.</p><div class="demo-actions"><a class="button button-primary demo-link" data-demo-link href="#" aria-disabled="true">Full demo link pending</a><a class="button button-secondary" data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Supporting report</a></div></div>
+          <div class="demo-copy"><span class="section-index">REPRESENTATIVE MISSION</span><h2>Receiving-dock inspection</h2><blockquote>“Inspect the receiving dock for barrels, save the evidence and produce a findings report.”</blockquote><p>The operator observes plan acceptance, route execution, camera evidence, mission progress and the terminal findings artifact from one browser workspace.</p></div>
         </section>
 
         <section class="demo-library" aria-labelledby="demo-chapters-heading">
@@ -432,46 +432,82 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
     <section id="panel-kpis" class="page-panel" role="tabpanel" aria-labelledby="tab-kpis" data-panel="kpis" hidden>
       <div class="page-hero">
         <div><span class="criterion-weight">Criterion 05 · 15%</span><h1>KPIs and<br>Results</h1></div>
-        <p>Results will be published with raw counts, documented conditions and an explicit simulation evidence boundary.</p>
+        <p>Measured results are reported with raw counts, documented conditions and an explicit simulation evidence boundary.</p>
       </div>
       <div class="content-shell section-stack">
-        <div class="pending-banner"><span class="status-dot amber"></span><div><strong>Measurement campaign pending</strong><p>No KPI values are claimed until the repeatable evaluation suite and ground-truth review are complete.</p></div></div>
         <section class="kpi-grid" data-kpi-grid>
-          <article><span>MISSION COMPLETION</span><strong data-kpi="missionCompletion">—</strong><small>successful missions / attempted missions</small></article>
-          <article><span>HUMAN INTERVENTION</span><strong data-kpi="humanIntervention">—</strong><small>missions requiring intervention / attempts</small></article>
-          <article><span>FALSE POSITIVE RATE</span><strong data-kpi="falsePositive">—</strong><small>false positives / ground-truth negatives</small></article>
-          <article><span>FALSE NEGATIVE RATE</span><strong data-kpi="falseNegative">—</strong><small>false negatives / ground-truth positives</small></article>
+          <article><span>MISSION COMPLETION</span><strong data-kpi="missionCompletion">20 / 20</strong><small>successful / attempted nominal missions; 5/5 in every scenario</small></article>
+          <article><span>UNPLANNED HUMAN INTERVENTION</span><strong data-kpi="humanIntervention">0% each</strong><small>0/15 single-robot missions · 0/5 fleet missions</small></article>
+          <article><span>FALSE POSITIVES</span><strong data-kpi="falsePositive">0 / 10</strong><small>qualified barrel queries / ground-truth negatives</small></article>
+          <article><span>FALSE NEGATIVES</span><strong data-kpi="falseNegative">0 / 10</strong><small>qualified barrel queries / ground-truth positives</small></article>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">EVALUATION PROTOCOL</span><h2>Results that can be audited</h2></div><p>Percentages alone are insufficient. Every published result will retain its denominator and test conditions.</p></div>
-          <div class="method-table" role="table" aria-label="KPI evaluation protocol">
-            <div role="row"><strong role="columnheader">Measure</strong><strong role="columnheader">Required evidence</strong><strong role="columnheader">Boundary</strong></div>
-            <div role="row"><span role="cell">Mission completion</span><span role="cell">Predefined mission suite, success contract and failure reason</span><span role="cell">Simulation runtime</span></div>
-            <div role="row"><span role="cell">Human intervention</span><span role="cell">Intervention count and type for every attempted mission</span><span role="cell">Manual test actions separated</span></div>
-            <div role="row"><span role="cell">Visual classification</span><span role="cell">Labelled ground truth and confusion matrix by query</span><span role="cell">Qualified targets only</span></div>
-            <div role="row"><span role="cell">Mission latency</span><span role="cell">Request, plan, execution and report timestamps</span><span role="cell">Documented hardware</span></div>
+          <div class="section-heading"><div><span class="section-index">NOMINAL MISSION MATRIX</span><h2>Five exact-wording trials in every scenario</h2></div><p>Duration runs from browser instruction ingress to the authoritative terminal operation. Values remain separated by scenario because the work and runtime profiles differ.</p></div>
+          <div class="method-table" role="table" aria-label="Results of the sealed nominal mission matrix">
+            <div role="row"><strong role="columnheader">Scenario</strong><strong role="columnheader">Successful / attempted</strong><strong role="columnheader">Duration: min / median / max</strong></div>
+            <div role="row"><span role="cell">Receiving Dock barrel inspection with permanent images</span><span role="cell">5 / 5 · 100%</span><span role="cell">16.498 / 17.953 / 37.224 s</span></div>
+            <div role="row"><span role="cell">Maintenance Bay inspection for tool chest and air compressor</span><span role="cell">5 / 5 · 100%</span><span role="cell">72.848 / 77.332 / 83.594 s</span></div>
+            <div role="row"><span role="cell">Receiving Dock inspection with findings PDF</span><span role="cell">5 / 5 · 100%</span><span role="cell">146.635 / 150.708 / 152.161 s</span></div>
+            <div role="row"><span role="cell">Four-robot fleet warehouse inspection</span><span role="cell">5 / 5 · 100%</span><span role="cell">356.098 / 370.870 / 375.604 s</span></div>
           </div>
         </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">PRINCIPAL RESULTS</span><h2>Measured outcomes with their denominators</h2></div><p>The two runtime profiles remain distinct evidence groups; results are not pooled as though the configurations were interchangeable.</p></div>
+          <div class="method-table" role="table" aria-label="Principal measured KPI results">
+            <div role="row"><strong role="columnheader">Indicator</strong><strong role="columnheader">Measured result</strong><strong role="columnheader">Interpretation</strong></div>
+            <div role="row"><span role="cell">Nominal mission completion</span><span role="cell">5/5 in each of four scenarios</span><span role="cell">20/20 across the sealed scenario matrix</span></div>
+            <div role="row"><span role="cell">Inspection evidence coverage</span><span role="cell">125/125 viewpoints</span><span role="cell">100% accepted, identity-bound evidence coverage</span></div>
+            <div role="row"><span role="cell">Permanent-image creation</span><span role="cell">15/15 images</span><span role="cell">100% for the scenario requesting retention</span></div>
+            <div role="row"><span role="cell">Findings-report generation</span><span role="cell">5/5 PDFs</span><span role="cell">100% for missions explicitly requesting a report</span></div>
+            <div role="row"><span role="cell">Report availability latency</span><span role="cell">0 s for all 5 PDFs</span><span role="cell">Terminal-state observation to durable copy-and-hash commit; not browser rendering or full generation time</span></div>
+            <div role="row"><span role="cell">Navigation replans / recoveries</span><span role="cell">0 / 0 measured</span><span role="cell">Authoritative completed-run counters; fleet logs retained one internal replan transition per run</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">PERCEPTION & INTERPRETATION</span><h2>Qualified scope, stated narrowly</h2></div><p>Classification results apply only to the authorized barrel class and equivalent <code>barrels</code> query in the frozen simulated scene and render configuration.</p></div>
+          <div class="method-table" role="table" aria-label="Perception qualification and instruction regression results">
+            <div role="row"><strong role="columnheader">Measure</strong><strong role="columnheader">Measured result</strong><strong role="columnheader">Boundary</strong></div>
+            <div role="row"><span role="cell">Perception confusion matrix</span><span role="cell">TP 10 · TN 10 · FP 0 · FN 0</span><span role="cell">Two qualified query forms; five positive and five negative cases each</span></div>
+            <div role="row"><span role="cell">Precision and recall</span><span role="cell">100% / 100%</span><span role="cell">Qualified barrel scope only; other objects and physical imagery remain unqualified, and calibration/final-case disjointness is not fully evidenced</span></div>
+            <div role="row"><span role="cell">Instruction regression</span><span role="cell">37/37 cases · 100%</span><span role="cell">Supporting evidence; artifact did not match the active campaign configuration</span></div>
+            <div role="row"><span role="cell">Instruction latency</span><span role="cell">6.679 s mean · 18.324 s maximum</span><span role="cell">80% local-model backend coverage across the 30 cases that expected it</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">EVALUATION PROTOCOL</span><h2>Results that can be audited</h2></div><p>Measurements apply to MuJoCo simulation only and retain the exact runtime, hardware and trial conditions documented in the report.</p></div>
+          <div class="method-table" role="table" aria-label="KPI evaluation protocol">
+            <div role="row"><strong role="columnheader">Protocol element</strong><strong role="columnheader">Recorded condition</strong><strong role="columnheader">Evidence boundary</strong></div>
+            <div role="row"><span role="cell">Runtime</span><span role="cell">ROS 2 Humble · Python 3.10.12 · MuJoCo 3.10.0 · Ubuntu 22.04 under WSL2</span><span role="cell">Simulation only</span></div>
+            <div role="row"><span role="cell">Hardware</span><span role="cell">AMD Ryzen 7 3700X · NVIDIA GeForce RTX 3070 8 GiB · approximately 16 GiB system memory</span><span role="cell">Documented evaluation machine</span></div>
+            <div role="row"><span role="cell">Trial design</span><span role="cell">Five exact-wording trials for each of four scenarios</span><span role="cell">Three single-robot scenarios in one shared launch; each fleet trial used a fresh launch</span></div>
+            <div role="row"><span role="cell">Package integrity</span><span role="cell">6/6 KPI package manifests passed integrity validation</span><span role="cell">No hash mismatch and no uncommitted raw-log tail</span></div>
+          </div>
+        </section>
+
+        <section class="boundary-callout"><div><span class="section-index">INCOMPLETE ACCEPTANCE</span><h2>Positive nominal verdict—not full automatic acceptance.</h2></div><p>The planned Stop, manual-control and recovery suite was not executed; formal fleet conflict-free completion remains unknown because every fleet observation contained telemetry gaps; the formal screenshot and operator-note sets are incomplete; no complete application-wide random seed was supplied; and no result establishes physical-robot safety or customer-site performance.</p></section>
       </div>
     </section>
 
     <section id="panel-business" class="page-panel" role="tabpanel" aria-labelledby="tab-business" data-panel="business" hidden>
       <div class="page-hero">
         <div><span class="criterion-weight">Criterion 06 · 10%</span><h1>Business<br>Case</h1></div>
-        <p>Begin with a measurable simulation-first engineering pilot, then progress to site onboarding and recurring software revenue when physical validation justifies it.</p>
+        <p>Begin with a measurable simulation-first engineering pilot for a camera-instrumented site, then progress to site onboarding and recurring software revenue when physical validation justifies it.</p>
       </div>
       <div class="content-shell section-stack">
         <section class="offer-hero">
-          <div><span class="section-index">COMMERCIAL RECOMMENDATION</span><h2>A bounded warehouse-inspection pilot</h2><p>An eight-to-twelve-week engagement representing up to three inspection workflows, with configuration, validation, operator review and a physical-integration decision gate.</p></div>
+          <div><span class="section-index">COMMERCIAL RECOMMENDATION</span><h2>A bounded site-inspection pilot</h2><p>An eight-to-twelve-week engagement for one camera-instrumented indoor facility or one bounded outdoor area, representing up to three inspection workflows with configuration, validation, operator review and a physical-integration decision gate.</p></div>
           <div class="price-card"><small>PROPOSED PILOT</small><strong>€25,000</strong><span>Simulation-first · one site</span></div>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">FIRST CUSTOMER & OFFER</span><h2>Start where the workflow is frequent and measurable</h2></div><p>The first customer is not buying unsupervised autonomy. It is buying a bounded engineering pilot that tests whether the workflow deserves physical integration.</p></div>
+          <div class="section-heading"><div><span class="section-index">FIRST CUSTOMER & OFFER</span><h2>Start where the workflow is frequent and measurable</h2></div><p>The first customer is a facility, infrastructure or site operator already evaluating mobile robotics or working with an integrator. It is buying a bounded engineering pilot—not unsupervised autonomy.</p></div>
           <div class="contract-columns">
-            <article><span class="section-index">CUSTOMER FIT</span><h3>A suitable first customer has</h3><ul class="check-list"><li>One warehouse with clearly defined inspection areas</li><li>Recurring, documentable inspection workflows</li><li>An operations or safety manager responsible for the process</li><li>An automation team or robotics integration partner</li><li>A measurable current process for comparison</li></ul></article>
-            <article><span class="section-index">PILOT SCOPE</span><h3>What the engagement delivers</h3><ul class="check-list"><li>One site represented in simulation</li><li>Up to three inspection, patrol or monitoring missions</li><li>Semantic areas, viewpoints, targets and reporting rules</li><li>Natural-language mission and evidence demonstration</li><li>Agreed KPI protocol and two operator review sessions</li><li>A stop, repeat or physical-integration decision gate</li></ul></article>
+            <article><span class="section-index">CUSTOMER FIT</span><h3>A suitable first customer has</h3><ul class="check-list"><li>One camera-instrumented or surveyable site with clearly defined inspection areas</li><li>Recurring, documentable inspection workflows</li><li>An operations or safety manager responsible for the process</li><li>An automation team or robotics integration partner</li><li>A measurable current process for comparison</li></ul></article>
+            <article><span class="section-index">PILOT SCOPE</span><h3>What the engagement delivers</h3><ul class="check-list"><li>One indoor facility or bounded outdoor area represented in simulation</li><li>Up to three inspection, patrol or monitoring missions</li><li>Semantic areas, viewpoints, targets, reconstruction inputs and reporting rules</li><li>Natural-language mission and evidence demonstration</li><li>Agreed KPI protocol and two operator review sessions</li><li>A stop, repeat or physical-integration decision gate</li></ul></article>
           </div>
         </section>
 
@@ -483,7 +519,7 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">COST BUILD-UP</span><h2>How the €18,400 estimate is constructed</h2></div><p>The planning model uses a fully loaded project labour rate of €50 per hour. Hardware purchase and physical integration are excluded.</p></div>
+          <div class="section-heading"><div><span class="section-index">COST BUILD-UP</span><h2>How the €18,400 estimate is constructed</h2></div><p>The planning model uses a fully loaded specialist project labour rate of €50 per hour. This is a budgeting assumption above reported EU and euro-area averages, not a quoted market rate. Hardware purchase and physical integration are excluded.</p></div>
           <div class="method-table" role="table" aria-label="Estimated direct cost of one simulation-first pilot">
             <div role="row"><strong role="columnheader">Workstream</strong><strong role="columnheader">Planning assumption</strong><strong role="columnheader">Estimated cost</strong></div>
             <div role="row"><span role="cell">Workflow discovery and requirements</span><span role="cell">40 hours × €50</span><span role="cell">€2,000</span></div>
@@ -497,10 +533,20 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
           </div>
         </section>
 
+        <section>
+          <div class="section-heading"><div><span class="section-index">COMMERCIAL BENCHMARKS</span><h2>Directional checks—not price or demand validation</h2></div><p>Public comparables show that recurring robotics and spatial-data services exist, but they are broader offers with different cost structures. Revenue is not treated as a profitability proxy.</p></div>
+          <div class="method-table" role="table" aria-label="External commercial benchmarks and interpretation boundaries">
+            <div role="row"><strong role="columnheader">Benchmark</strong><strong role="columnheader">Reported reference point</strong><strong role="columnheader">How it is used</strong></div>
+            <div role="row"><span role="cell"><a href="https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250328-1" target="_blank" rel="noopener">Eurostat 2024 labour costs</a></span><span role="cell">€33.5 EU average · €37.3 euro-area average · €10.6–€55.2 country range</span><span role="cell">A directional anchor for the €50 specialist budgeting assumption</span></div>
+            <div role="row"><span role="cell"><a href="https://www.sec.gov/Archives/edgar/data/1600983/000110465925022699/tm258926d1_ex99-1.htm" target="_blank" rel="noopener">Knightscope 2025 investor presentation</a></span><span role="cell">US$1–$11 per autonomous-security-robot operating hour</span><span role="cell">Supports a recurring-service comparison only; the offer includes hardware and services</span></div>
+            <div role="row"><span role="cell">Recurring service models</span><span role="cell"><a href="https://www.sec.gov/Archives/edgar/data/1600983/000110465926036240/kscp-20251231x10k.htm" target="_blank" rel="noopener">Knightscope 2025</a> and <a href="https://www.sec.gov/Archives/edgar/data/1819394/000181939425000007/mttr-20241231.htm" target="_blank" rel="noopener">Matterport 2024</a> report material service or subscription revenue</span><span role="cell">Evidence of existing commercial models, not demand validation or a forecast for this application</span></div>
+          </div>
+        </section>
+
         <section class="business-path">
           <div class="section-heading"><div><span class="section-index">GROWTH PATH</span><h2>Evidence before expansion</h2></div><p>Commercial assumptions remain transparent until customer interviews, quotations and physical-site measurements replace them.</p></div>
           <div class="path-grid">
-            <article><span>01</span><h3>Simulation pilot</h3><p>Represent and measure the customer’s bounded workflow.</p><strong>€25k</strong></article>
+            <article><span>01</span><h3>Inspection pilot</h3><p>Represent and measure the customer’s bounded workflow in simulation.</p><strong>€25k</strong></article>
             <article><span>02</span><h3>Site onboarding</h3><p>Configure physical interfaces after technical validation.</p><strong>€8k</strong></article>
             <article><span>03</span><h3>Annual platform</h3><p>Licence the reusable mission-control software and support.</p><strong>€16k / year</strong></article>
           </div>
@@ -528,12 +574,12 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
           </div>
         </section>
 
-        <section class="boundary-callout"><div><span class="section-index">ILLUSTRATIVE CUSTOMER VALUE</span><h2>€43,750 baseline → €5,875 net annual benefit</h2></div><p>Assume four 1.25-hour inspection rounds per day, 250 working days and labour at €35 per hour. A 50% reduction in active human time saves €21,875; after €16,000 annual software and support, €5,875 remains. Under these assumptions, the €8,000 onboarding fee pays back in approximately 16 months. Robot hardware and physical integration remain excluded.</p></section>
+        <section class="boundary-callout"><div><span class="section-index">ILLUSTRATIVE CUSTOMER VALUE</span><h2>€43,750 baseline → €5,875 net annual benefit</h2></div><p>Assume a camera-instrumented facility performs four 1.25-hour inspection rounds per day, 250 working days, at €35 per hour. A 50% reduction in active human time saves €21,875; after €16,000 annual software and support, €5,875 remains. Under these assumptions, the €8,000 onboarding fee pays back in approximately 16 months. Robot hardware and physical integration remain excluded.</p></section>
 
         <section>
           <div class="section-heading"><div><span class="section-index">SCALING LOGIC</span><h2>Standardize configuration before scaling sales</h2></div><p>The business becomes scalable only when later sites reuse the mission contracts, interface and onboarding process instead of becoming independent engineering projects.</p></div>
           <div class="contract-columns">
-            <article><span class="section-index">SCALING MECHANISMS</span><ul class="check-list"><li>Configuration-driven maps and viewpoints</li><li>Reusable mission and skill contracts</li><li>Standard warehouse mission templates</li><li>Repeatable onboarding and acceptance procedures</li><li>Annual site licences and support packages</li><li>Delivery through integration partners</li></ul></article>
+            <article><span class="section-index">SCALING MECHANISMS</span><ul class="check-list"><li>Configuration-driven maps and viewpoints</li><li>Reusable mission and skill contracts</li><li>Standard indoor and outdoor inspection mission templates</li><li>Repeatable onboarding and acceptance procedures</li><li>Annual site licences and support packages</li><li>Delivery through integration partners</li></ul></article>
             <article><span class="section-index">WHAT THE PILOT MUST MEASURE</span><ul class="check-list"><li>Customer willingness to pay</li><li>Hours required for site configuration</li><li>Mission completion and intervention rates</li><li>Qualified perception performance</li><li>Operator time saved against baseline</li><li>Support effort after initial delivery</li></ul></article>
           </div>
         </section>
@@ -546,6 +592,7 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
             <div role="row"><span role="cell">Low willingness to pay</span><span role="cell">A priced proposal reviewed by a qualified customer.</span><span role="cell">Proceed only with a paid or explicitly funded pilot.</span></div>
             <div role="row"><span role="cell">Excessive delivery effort</span><span role="cell">Actual mapping, configuration, testing and support hours.</span><span role="cell">Continue only if later sites reuse substantial prior work.</span></div>
             <div role="row"><span role="cell">Physical integration risk</span><span role="cell">Robot interface, localization, sensors and emergency-stop validation.</span><span role="cell">No production-readiness claim before physical acceptance testing.</span></div>
+            <div role="row"><span role="cell">Outdoor operating conditions</span><span role="cell">Weather, lighting, terrain, communications and capture coverage.</span><span role="cell">Approve outdoor use only after site-specific environmental and safety validation.</span></div>
             <div role="row"><span role="cell">Unqualified perception</span><span role="cell">Customer-site ground truth and measured false-positive and false-negative results.</span><span role="cell">Keep findings advisory until each required class passes qualification.</span></div>
             <div role="row"><span role="cell">Licensing and security gaps</span><span role="cell">Review software, models, assets, data handling and deployment security.</span><span role="cell">Resolve material issues before external commercial deployment.</span></div>
           </div>
@@ -558,7 +605,7 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
 
   <footer class="site-footer">
     <div><strong data-team-name>Duckster Team</strong><span>AI Beauty Contest</span></div>
-    <div><a data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Report</a><a data-repository-link href="https://github.com/ApostolosVarelas/AI_Beauty_Contest/tree/9f065b24f8082dedc1baf0bafb7968305b76584a" target="_blank" rel="noopener">Repository</a></div>
+    <div><a data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Report</a></div>
   </footer>
 </body>
 </html>

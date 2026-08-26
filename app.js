@@ -206,22 +206,9 @@
     }));
   }
 
-  document.querySelectorAll("[data-repository-link]").forEach((link) => {
-    if (config.repositoryUrl) link.href = config.repositoryUrl;
-  });
-
   document.querySelectorAll("[data-report-link]").forEach((link) => {
     if (config.reportUrl) link.href = config.reportUrl;
   });
-
-  const demoLink = document.querySelector("[data-demo-link]");
-  if (demoLink && config.demoUrl) {
-    demoLink.href = config.demoUrl;
-    demoLink.target = "_blank";
-    demoLink.rel = "noopener";
-    demoLink.removeAttribute("aria-disabled");
-    demoLink.textContent = "Watch the full demonstration ↗";
-  }
 
   Object.entries(config.kpis || {}).forEach(([key, value]) => {
     const element = document.querySelector(`[data-kpi="${key}"]`);
