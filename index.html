@@ -360,12 +360,54 @@
       <div class="content-shell section-stack">
         <section class="demo-stage">
           <div class="video-shell">
-            <video autoplay muted loop playsinline poster="assets/bologna-interporto.webp" aria-label="Repository-generated Go2 warehouse simulation preview">
-              <source src="assets/patrol-go2-warehouse-v1.webm" type="video/webm">
+            <video autoplay muted loop playsinline poster="assets/demo-highlight-reel-poster.webp" aria-label="AI Beauty Contest platform demonstration highlight reel">
+              <source src="assets/demo-highlight-reel.mp4" type="video/mp4">
             </video>
-            <div class="video-badge"><span></span> Repository-generated simulation preview</div>
+            <div class="video-badge"><span></span> Actual platform footage</div>
           </div>
           <div class="demo-copy"><span class="section-index">REPRESENTATIVE MISSION</span><h2>Receiving-dock inspection</h2><blockquote>“Inspect the receiving dock for barrels, save the evidence and produce a findings report.”</blockquote><p>The operator observes plan acceptance, route execution, camera evidence, mission progress and the terminal findings artifact from one browser workspace.</p><div class="demo-actions"><a class="button button-primary demo-link" data-demo-link href="#" aria-disabled="true">Full demo link pending</a><a class="button button-secondary" data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Supporting report</a></div></div>
+        </section>
+
+        <section class="demo-library" aria-labelledby="demo-chapters-heading">
+          <div class="section-heading demo-library-heading">
+            <div><span class="section-index">RECORDED WALKTHROUGH</span><h2 id="demo-chapters-heading">Explore the platform chapter by chapter</h2></div>
+            <p>Five focused clips follow the same operator journey documented in the report, from choosing an operation to supervising multiple configured deployments.</p>
+          </div>
+
+          <div class="clip-explorer">
+            <div class="clip-tab-list" role="tablist" aria-label="Demonstration chapters">
+              <button class="clip-tab is-active" id="clip-tab-operation" type="button" role="tab" aria-selected="true" aria-controls="clip-panel-operation" tabindex="0" data-clip-tab="operation"><span>01</span><strong>Choose operation</strong></button>
+              <button class="clip-tab" id="clip-tab-mission" type="button" role="tab" aria-selected="false" aria-controls="clip-panel-mission" tabindex="-1" data-clip-tab="mission"><span>02</span><strong>Create mission</strong></button>
+              <button class="clip-tab" id="clip-tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="clip-panel-evidence" tabindex="-1" data-clip-tab="evidence"><span>03</span><strong>Review evidence</strong></button>
+              <button class="clip-tab" id="clip-tab-fleet" type="button" role="tab" aria-selected="false" aria-controls="clip-panel-fleet" tabindex="-1" data-clip-tab="fleet"><span>04</span><strong>Coordinate fleet</strong></button>
+              <button class="clip-tab" id="clip-tab-deployments" type="button" role="tab" aria-selected="false" aria-controls="clip-panel-deployments" tabindex="-1" data-clip-tab="deployments"><span>05</span><strong>Reuse deployments</strong></button>
+            </div>
+
+            <article class="clip-panel is-active" id="clip-panel-operation" role="tabpanel" aria-labelledby="clip-tab-operation" data-clip-panel="operation">
+              <div class="clip-media"><button class="clip-arrow clip-arrow-previous" type="button" data-clip-previous aria-label="Previous demonstration chapter">←</button><video autoplay controls loop muted playsinline preload="metadata" aria-label="Choose an operation demonstration clip"><source src="assets/demo-clips/01-choose-operation.mp4" type="video/mp4"></video><button class="clip-arrow clip-arrow-next" type="button" data-clip-next aria-label="Next demonstration chapter">→</button></div>
+              <div class="clip-copy"><span class="clip-kicker">CHAPTER 01 · 00:04</span><h3>Choose the operational context</h3><p>Start from the explicit Patrolling or Rescuing families, then move into the map of configured deployment locations.</p><small>Report coverage · Sections 4.1 and 4.2</small></div>
+            </article>
+
+            <article class="clip-panel" id="clip-panel-mission" role="tabpanel" aria-labelledby="clip-tab-mission" data-clip-panel="mission" hidden>
+              <div class="clip-media"><button class="clip-arrow clip-arrow-previous" type="button" data-clip-previous aria-label="Previous demonstration chapter">←</button><video autoplay controls loop muted playsinline preload="metadata" aria-label="Natural-language mission creation and execution demonstration clip"><source src="assets/demo-clips/02-create-mission.mp4" type="video/mp4"></video><button class="clip-arrow clip-arrow-next" type="button" data-clip-next aria-label="Next demonstration chapter">→</button></div>
+              <div class="clip-copy"><span class="clip-kicker">CHAPTER 02 · 01:14</span><h3>Create and run a mission</h3><p>See the single-robot workspace, bounded task sequence, live sensing and the opening stage of guarded inspection as one uninterrupted flow.</p><small>Report coverage · Sections 4.2–4.4</small></div>
+            </article>
+
+            <article class="clip-panel" id="clip-panel-evidence" role="tabpanel" aria-labelledby="clip-tab-evidence" data-clip-panel="evidence" hidden>
+              <div class="clip-media"><button class="clip-arrow clip-arrow-previous" type="button" data-clip-previous aria-label="Previous demonstration chapter">←</button><video autoplay controls loop muted playsinline preload="metadata" aria-label="Evidence review and findings report demonstration clip"><source src="assets/demo-clips/03-review-evidence.mp4" type="video/mp4"></video><button class="clip-arrow clip-arrow-next" type="button" data-clip-next aria-label="Next demonstration chapter">→</button></div>
+              <div class="clip-copy"><span class="clip-kicker">CHAPTER 03 · 00:37</span><h3>Review evidence and findings</h3><p>Open the task-scoped evidence browser and inspect the findings report with its supporting observations and final report data visible.</p><small>Report coverage · Section 4.5</small></div>
+            </article>
+
+            <article class="clip-panel" id="clip-panel-fleet" role="tabpanel" aria-labelledby="clip-tab-fleet" data-clip-panel="fleet" hidden>
+              <div class="clip-media"><button class="clip-arrow clip-arrow-previous" type="button" data-clip-previous aria-label="Previous demonstration chapter">←</button><video autoplay controls loop muted playsinline preload="metadata" aria-label="Four-robot fleet coordination demonstration clip"><source src="assets/demo-clips/04-coordinate-fleet.mp4" type="video/mp4"></video><button class="clip-arrow clip-arrow-next" type="button" data-clip-next aria-label="Next demonstration chapter">→</button></div>
+              <div class="clip-copy"><span class="clip-kicker">CHAPTER 04 · 02:29</span><h3>Coordinate a four-robot fleet</h3><p>Inspect non-duplicated task queues, colour-coded route ownership, automatic clearance behaviour and the combined fleet camera network.</p><small>Report coverage · Section 4.6</small></div>
+            </article>
+
+            <article class="clip-panel" id="clip-panel-deployments" role="tabpanel" aria-labelledby="clip-tab-deployments" data-clip-panel="deployments" hidden>
+              <div class="clip-media"><button class="clip-arrow clip-arrow-previous" type="button" data-clip-previous aria-label="Previous demonstration chapter">←</button><video autoplay controls loop muted playsinline preload="metadata" aria-label="Configured deployment reuse demonstration clip"><source src="assets/demo-clips/05-reuse-deployments.mp4" type="video/mp4"></video><button class="clip-arrow clip-arrow-next" type="button" data-clip-next aria-label="Next demonstration chapter">→</button></div>
+              <div class="clip-copy"><span class="clip-kicker">CHAPTER 05 · 02:22</span><h3>Reuse the mission core across sites</h3><p>Three concise excerpts show a crop survey, deployment selection and navigation on reconstructed terrain using the same supervisory model.</p><small>Report coverage · Section 4.7</small></div>
+            </article>
+          </div>
         </section>
 
         <section>

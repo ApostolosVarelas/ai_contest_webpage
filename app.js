@@ -29,6 +29,10 @@
       panel.classList.toggle("is-active", active);
     });
 
+    if (target !== "demo") {
+      document.querySelectorAll("[data-clip-panel] video").forEach((video) => video.pause());
+    }
+
     if (settings.updateHash && window.location.hash !== `#${target}`) {
       history.pushState(null, "", `#${target}`);
     }
@@ -63,6 +67,87 @@
       activatePanel(control.dataset.tabTarget);
     });
   });
+
+  const clipTabs = Array.from(document.querySelectorAll("[data-clip-tab]"));
+  const clipPanels = Array.from(document.querySelectorAll("[data-clip-panel]"));
+  const clipExplorer = document.querySelector(".clip-explorer");
+  let clipExplorerVisible = false;
+
+  function syncClipPlayback() {
+    clipPanels.forEach((panel) => {
+      const video = panel.querySelector("video");
+      if (!video) return;
+      const shouldPlay = panel.classList.contains("is-active")
+        && clipExplorerVisible
+        && document.body.dataset.page === "demo"
+        && !document.hidden;
+      if (shouldPlay) video.play().catch(() => {});
+      else video.pause();
+    });
+  }
+
+  function activateClip(name, options) {
+    const settings = Object.assign({ focus: false }, options);
+    const target = clipPanels.some((panel) => panel.dataset.clipPanel === name)
+      ? name
+      : clipPanels[0]?.dataset.clipPanel;
+
+    if (!target) return;
+
+    clipTabs.forEach((tab) => {
+      const active = tab.dataset.clipTab === target;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && settings.focus) tab.focus();
+    });
+
+    clipPanels.forEach((panel) => {
+      const active = panel.dataset.clipPanel === target;
+      panel.hidden = !active;
+      panel.classList.toggle("is-active", active);
+      if (!active) panel.querySelector("video")?.pause();
+    });
+
+    syncClipPlayback();
+  }
+
+  clipTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateClip(tab.dataset.clipTab));
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+      let next = index;
+      if (event.key === "ArrowLeft") next = (index - 1 + clipTabs.length) % clipTabs.length;
+      if (event.key === "ArrowRight") next = (index + 1) % clipTabs.length;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = clipTabs.length - 1;
+      activateClip(clipTabs[next].dataset.clipTab, { focus: true });
+    });
+  });
+
+  document.querySelectorAll("[data-clip-previous], [data-clip-next]").forEach((control) => {
+    control.addEventListener("click", () => {
+      const current = clipTabs.findIndex((tab) => tab.classList.contains("is-active"));
+      const direction = control.hasAttribute("data-clip-previous") ? -1 : 1;
+      const next = (current + direction + clipTabs.length) % clipTabs.length;
+      activateClip(clipTabs[next].dataset.clipTab);
+      const focusTarget = clipPanels[next].querySelector(direction < 0 ? "[data-clip-previous]" : "[data-clip-next]");
+      focusTarget?.focus({ preventScroll: true });
+    });
+  });
+
+  if (clipExplorer && "IntersectionObserver" in window) {
+    const clipObserver = new IntersectionObserver((entries) => {
+      clipExplorerVisible = entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.35);
+      syncClipPlayback();
+    }, { threshold: [0, 0.35] });
+    clipObserver.observe(clipExplorer);
+  } else if (clipExplorer) {
+    clipExplorerVisible = true;
+  }
+
+  document.addEventListener("visibilitychange", syncClipPlayback);
 
   navToggle.addEventListener("click", () => {
     const open = !nav.classList.contains("is-open");
@@ -158,4 +243,5 @@
   }
 
   activatePanel(window.location.hash.slice(1), { updateHash: false });
+  activateClip("operation");
 })();
