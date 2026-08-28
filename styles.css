@@ -1930,6 +1930,33 @@ blockquote {
   text-underline-offset: 4px;
 }
 
+.site-footer a.footer-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  color: #e6edf4;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.site-footer a.footer-repo:hover,
+.site-footer a.footer-repo:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(71, 215, 232, 0.1);
+  border-color: rgba(71, 215, 232, 0.55);
+  outline: none;
+}
+
+.footer-repo svg {
+  flex-shrink: 0;
+}
+
 .legal-page {
   min-height: 100vh;
   padding: clamp(45px, 8vw, 110px) max(20px, calc((100vw - 880px) / 2));
