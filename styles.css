@@ -1201,7 +1201,7 @@ blockquote {
 
 .support-layers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 44px;
 }
@@ -1212,6 +1212,45 @@ blockquote {
 
 .support-layers article:last-child {
   border-color: rgba(116, 224, 165, 0.38);
+}
+
+.architecture-authority article {
+  display: flex;
+  flex-direction: column;
+}
+
+.architecture-authority h3 {
+  margin: 12px 0 0;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+}
+
+.task-vocabulary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.task-vocabulary code {
+  display: inline-flex;
+  padding: 8px 10px;
+  color: #176c82;
+  background: #eef9fa;
+  border: 1px solid rgba(39, 133, 156, 0.2);
+  font-size: 0.7rem;
+}
+
+.architecture-authority article > p {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.table-note {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: #65758a;
+  border-left: 2px solid var(--cyan);
+  font-size: 0.82rem;
 }
 
 .safety-grid {
@@ -1351,6 +1390,18 @@ blockquote {
   box-shadow: 0 0 0 4px rgba(116, 224, 165, 0.12);
 }
 
+.check-list.deny-list li::before {
+  background: var(--red);
+  box-shadow: 0 0 0 4px rgba(255, 125, 120, 0.14);
+}
+
+.contract-columns article > p {
+  margin: 26px 0 0;
+  color: #627489;
+  font-size: 0.87rem;
+  line-height: 1.72;
+}
+
 .video-shell {
   position: relative;
   min-height: 380px;
@@ -1367,6 +1418,73 @@ blockquote {
 
 .demo-copy blockquote {
   margin-top: 22px;
+}
+
+.full-demo-card {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: center;
+  gap: clamp(34px, 5vw, 70px);
+  padding: clamp(32px, 5vw, 58px);
+  color: var(--ink);
+  background: var(--night);
+  border: 1px solid rgba(71, 215, 232, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.full-demo-card .section-index {
+  color: var(--cyan-soft);
+}
+
+.full-demo-card h2 {
+  margin: 10px 0 0;
+  font-size: clamp(1.9rem, 3.1vw, 2.9rem);
+}
+
+.full-demo-card p {
+  margin: 16px 0 0;
+  color: #c3d0dc;
+}
+
+.full-demo-card .button {
+  margin-top: 28px;
+}
+
+.full-demo-card small {
+  display: block;
+  margin-top: 16px;
+  color: var(--ink-muted);
+  font-size: 0.74rem;
+  line-height: 1.7;
+}
+
+.full-demo-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0;
+  background: rgba(149, 167, 186, 0.16);
+  border: 1px solid rgba(149, 167, 186, 0.16);
+}
+
+.full-demo-facts > div {
+  padding: 18px 20px;
+  background: var(--night);
+}
+
+.full-demo-facts dt {
+  color: var(--ink-muted);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.full-demo-facts dd {
+  margin: 7px 0 0;
+  font-size: 0.92rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
 }
 
 .demo-library {
@@ -1767,6 +1885,48 @@ blockquote {
   line-height: 1.4;
 }
 
+.kpi-audit-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: var(--ink);
+  background: var(--night);
+  border: 1px solid rgba(71, 215, 232, 0.16);
+  box-shadow: var(--shadow);
+}
+
+.kpi-audit-strip article {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  border-right: 1px solid rgba(149, 167, 186, 0.16);
+}
+
+.kpi-audit-strip article:last-child {
+  border-right: 0;
+}
+
+.kpi-audit-strip small {
+  margin-bottom: auto;
+  color: var(--cyan-soft);
+  font-size: 0.59rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+.kpi-audit-strip strong {
+  color: #fff;
+  font-size: clamp(1.35rem, 2.4vw, 2.15rem);
+  line-height: 1;
+}
+
+.kpi-audit-strip span {
+  margin-top: 9px;
+  color: #91a4b7;
+  font-size: 0.7rem;
+}
+
 .method-table {
   border-top: 1px solid var(--line-dark);
   border-left: 1px solid var(--line-dark);
@@ -2095,6 +2255,7 @@ blockquote {
 
   .metric-grid,
   .kpi-grid,
+  .kpi-audit-strip,
   .business-metrics,
   .four-up {
     grid-template-columns: repeat(2, 1fr);
@@ -2120,6 +2281,7 @@ blockquote {
   .demo-stage,
   .offer-hero,
   .boundary-callout,
+  .full-demo-card,
   .launch-card,
   .clip-panel {
     grid-template-columns: minmax(0, 1fr);
@@ -2159,6 +2321,10 @@ blockquote {
 @media (max-width: 620px) {
   .content-shell {
     width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .full-demo-facts {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .brand strong {
@@ -2240,6 +2406,7 @@ blockquote {
 
   .metric-grid,
   .kpi-grid,
+  .kpi-audit-strip,
   .business-metrics,
   .four-up,
   .process-flow,
@@ -2250,6 +2417,16 @@ blockquote {
   .support-layers,
   .execution-steps {
     grid-template-columns: 1fr;
+  }
+
+  .kpi-audit-strip article {
+    min-height: 130px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(149, 167, 186, 0.16);
+  }
+
+  .kpi-audit-strip article:last-child {
+    border-bottom: 0;
   }
 
   .metric-card,

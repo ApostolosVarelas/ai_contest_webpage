@@ -51,7 +51,7 @@
           <p class="hero-lead">A local LLM translates natural-language objectives into constrained ROS 2 missions while deterministic software retains authority over routing, safety and execution.</p>
           <div class="hero-actions">
             <button class="button button-primary" type="button" data-tab-target="demo">Explore the demo <span aria-hidden="true">→</span></button>
-            <a class="button button-secondary" data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Read the report</a>
+            <a class="button button-secondary" data-full-demo-link href="https://eagleprojectssrl-my.sharepoint.com/:v:/g/personal/avarelas_eagleprojects_world/IQA8DNFOml-iSKdToeS_zh5WAbs4u4oOSs_feDqh2miq3Ac?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=2TYyuM" target="_blank" rel="noopener noreferrer">Watch the full demo <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
@@ -142,58 +142,102 @@
       <div class="content-shell section-stack">
         <section class="split-feature">
           <div class="feature-image image-project"><img src="assets/demo-highlight-reel-poster.webp" alt="Four-robot mission-control workspace showing planned routes, task activity, LiDAR views and robot cameras"></div>
-          <div class="feature-copy"><span class="section-index">THE PROBLEM</span><h2>Operational knowledge and robotic control speak different languages.</h2><p>Facility and site teams understand what must be inspected. Structured indoor facilities and bounded outdoor areas can both require recurring inspection, yet executing those objectives typically requires ROS 2 expertise, semantic maps, navigation interfaces, sensor configuration and robot-specific commands.</p><blockquote>Enable a non-robotics operator to request, supervise and document a bounded inspection while deterministic software retains execution authority.</blockquote></div>
+          <div class="feature-copy"><span class="section-index">THE PROBLEM</span><h2>Operational knowledge and robotic control speak different languages.</h2><p>Facilities and operational sites require recurring inspection, patrolling and monitoring of rooms, workzones, equipment and infrastructure. Indoor settings include warehouses, industrial buildings and utility rooms; bounded outdoor settings include logistics yards, agricultural areas, industrial perimeters and infrastructure sites. Mobile robots can perform part of this work, but requesting a new mission typically demands ROS 2 knowledge, navigation interfaces, semantic maps, sensor configuration and robot-specific commands—creating a gap between the person who understands the operational need and the system capable of executing it.</p><blockquote>Enable a non-robotics operator to request, supervise and document a bounded inspection of a configured operational site while deterministic software retains authority over physical execution and safety-related decisions.</blockquote></div>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">TARGET CUSTOMER</span><h2>A focused workflow for recurring site inspection</h2></div><p>The initial customer is a facility, infrastructure or site operator with recurring visual inspections, defined operational areas and an automation team or integration partner. Indoor candidates include warehouses, industrial buildings and utility rooms; bounded outdoor candidates include logistics yards, agricultural areas, industrial perimeters and infrastructure sites. The warehouse is the first implementation example, not the product boundary.</p></div>
+          <div class="section-heading"><div><span class="section-index">OPERATIONAL EVIDENCE</span><h2>Published sources establish the need to inspect</h2></div><p>Warehouse-safety and service-robotics evidence supports the operational need. It is cited to show that these environments contain conditions worth inspecting—not to claim that this workflow improves them.</p></div>
+          <div class="method-table" role="table" aria-label="Published operational evidence and interpretation boundaries">
+            <div role="row"><strong role="columnheader">Source</strong><strong role="columnheader">Reported finding</strong><strong role="columnheader">How it is used</strong></div>
+            <div role="row"><span role="cell"><a href="https://www.osha.gov/warehousing/" target="_blank" rel="noopener">OSHA warehousing</a></span><span role="cell">Identifies powered industrial trucks, material handling, hazardous chemicals, slips, trips, falls and robotics among warehouse hazards, and musculoskeletal disorders and workers struck by material-handling equipment among the most common injuries</span><span role="cell">Establishes that warehouses contain conditions worth inspecting</span></div>
+            <div role="row"><span role="cell"><a href="https://www.bls.gov/iif/nonfatal-injuries-and-illnesses-tables/table-1-injury-and-illness-rates-by-industry-2024-national.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics, 2024</a></span><span role="cell">A recordable injury and illness incidence rate of 4.8 cases per 100 full-time workers for warehousing and storage</span><span role="cell">Quantifies the recurring operational exposure that inspection addresses</span></div>
+            <div role="row"><span role="cell"><a href="https://ifr.org/ifr-press-releases/news/service-robots-see-global-growth-boom" target="_blank" rel="noopener">IFR World Robotics 2025</a></span><span role="cell">Almost 200,000 professional service robots sold in 2024, with inspection and maintenance identified as a growing application group</span><span role="cell">Indicates an active professional-service-robot market, not demand for this product</span></div>
+          </div>
+        </section>
+
+        <section class="assumption-note"><strong>Evidence boundary</strong><p>These sources establish that warehouses contain activities and conditions worth inspecting, and that a professional-service-robot market exists. They do not by themselves prove that the proposed robotic workflow will reduce injuries or cost, nor do they establish demand for this particular product—both require customer discovery and a paid pilot.</p></section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">TARGET CUSTOMER</span><h2>A focused workflow for recurring site inspection</h2></div><p>The initial customer hypothesis is a warehouse or logistics operator that performs recurring visual inspections and needs a consistent record of the result. The selected use case is supervised warehouse inspection—a concrete implementation example of the broader operational need, not the only intended application. The software is intended to complement, rather than replace, existing robotics, safety and operational procedures.</p></div>
           <div class="method-table" role="table" aria-label="Target stakeholders and operational needs">
             <div role="row"><strong role="columnheader">Stakeholder</strong><strong role="columnheader">Operational need</strong><strong role="columnheader">Application response</strong></div>
-            <div role="row"><span role="cell">Operations, maintenance or safety operator</span><span role="cell">Request and supervise an inspection without constructing ROS 2 commands.</span><span role="cell">Natural-language missions, visible progress, camera and LiDAR views, and independent human controls.</span></div>
-            <div role="row"><span role="cell">Warehouse or facility manager</span><span role="cell">Obtain repeatable coverage and evidence associated with a known mission, location and time.</span><span role="cell">Configured viewpoints, validated tasks, deployment history and evidence-based findings.</span></div>
-            <div role="row"><span role="cell">Automation or robotics lead</span><span role="cell">Introduce flexible missions without allowing generative output to bypass execution constraints.</span><span role="cell">A strict task schema, deterministic routing, bounded execution and explicit readiness checks.</span></div>
-            <div role="row"><span role="cell">Robotics systems integrator</span><span role="cell">Adapt the workflow to another site without rebuilding the complete mission-control application.</span><span role="cell">Configuration-driven semantic maps, inspection viewpoints, targets and launch parameters.</span></div>
+            <div role="row"><span role="cell">Operations, maintenance or safety operator</span><span role="cell">Request and supervise an inspection without constructing ROS 2 commands or robot-specific routes.</span><span role="cell">Natural-language mission requests, visible task progress, camera and LiDAR views, evidence review and independent human controls.</span></div>
+            <div role="row"><span role="cell">Warehouse or facility manager</span><span role="cell">Obtain repeatable inspection coverage and evidence associated with a known mission, location and time.</span><span role="cell">Validated semantic tasks, configured viewpoints, mission history and evidence-based findings reports.</span></div>
+            <div role="row"><span role="cell">Automation or robotics lead</span><span role="cell">Introduce new missions without allowing generative output to bypass navigation and safety constraints.</span><span role="cell">Strict task schemas, deterministic route planning, bounded execution and explicit readiness checks.</span></div>
+            <div role="row"><span role="cell">Robotics systems integrator</span><span role="cell">Configure the solution for another site, robot profile or inspection workflow without rewriting the complete application.</span><span role="cell">Configuration-driven maps, rooms, inspection viewpoints, recognition targets, robot profiles and launch parameters.</span></div>
           </div>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">VALUE</span><h2>One observable workflow</h2></div><p>From a natural-language objective to a documented result, with independent human authority at every stage.</p></div>
-          <div class="card-grid four-up">
-            <article class="info-card"><span class="card-number">01</span><h3>Accessible</h3><p>Operators request supported missions without constructing ROS 2 command sequences.</p></article>
-            <article class="info-card"><span class="card-number">02</span><h3>Repeatable</h3><p>Configured routes, viewpoints and task contracts replace informal inspection sequences.</p></article>
-            <article class="info-card"><span class="card-number">03</span><h3>Interruptible</h3><p>Stop, cancellation, manual takeover and recovery remain independent of inference.</p></article>
-            <article class="info-card"><span class="card-number">04</span><h3>Traceable</h3><p>Evidence remains bound to its mission, robot, task, location, viewpoint, time and pose.</p></article>
-          </div>
-        </section>
-
-        <section>
-          <div class="section-heading"><div><span class="section-index">VALUE MEASUREMENT</span><h2>Benefits framed as testable hypotheses</h2></div><p>The simulation demonstrates the workflow. Customer value will be claimed only after comparison with the existing inspection process.</p></div>
-          <div class="method-table" role="table" aria-label="Value hypotheses and evaluation measures">
-            <div role="row"><strong role="columnheader">Value hypothesis</strong><strong role="columnheader">How it will be measured</strong><strong role="columnheader">Required comparison</strong></div>
-            <div role="row"><span role="cell">Easier mission creation</span><span role="cell">Time and operator actions required to submit and obtain an accepted mission.</span><span role="cell">Natural-language workflow versus the current engineering-led procedure.</span></div>
-            <div role="row"><span role="cell">Reliable execution</span><span role="cell">Mission completion rate with raw attempt counts and bounded failure reasons.</span><span role="cell">Repeated predefined missions under documented conditions.</span></div>
-            <div role="row"><span role="cell">Reduced supervision burden</span><span role="cell">Human intervention count, rate and intervention type.</span><span role="cell">Routine interventions separated from deliberate safety tests.</span></div>
-            <div role="row"><span role="cell">Reliable visible findings</span><span role="cell">False-positive and false-negative rates for each qualified target.</span><span role="cell">Model output versus labelled ground truth.</span></div>
-            <div role="row"><span role="cell">Faster documentation</span><span role="cell">Elapsed time from mission completion to an available findings report.</span><span role="cell">Automated evidence workflow versus the current reporting process.</span></div>
-          </div>
-        </section>
-
-        <section>
-          <div class="section-heading"><div><span class="section-index">SCALABILITY</span><h2>Reuse the mission core; configure the deployment</h2></div><p>New sites still require mapping, inspection design and safety validation, but they do not require a new mission-control application.</p></div>
+          <div class="section-heading"><div><span class="section-index">PROPOSED INITIATIVE</span><h2>Language proposes semantic work. Deterministic software decides.</h2></div><p>An LLM-driven mission-control and evidence platform for Unitree Go2 quadruped robots, implemented as two ROS 2 packages and validated first in MuJoCo simulation. The principal contribution is the controlled integration of interpretation, planning, guarded execution, human authority and evidence management in one observable workflow—not the language model in isolation.</p></div>
           <div class="contract-columns">
-            <article><span class="section-index">REUSABLE PLATFORM</span><h3>Shared across deployments</h3><ul class="check-list"><li>Constrained LLM interface and task schema</li><li>Mission lifecycle and task compiler</li><li>Routing, validation and human-control paths</li><li>Operator interface and ROS 2 integration</li><li>Evidence identity and reporting workflow</li></ul></article>
-            <article><span class="section-index">SITE CONFIGURATION</span><h3>Adapted for each operation</h3><ul class="check-list"><li>Semantic areas and traversable regions</li><li>Patrol seeds and inspection viewpoints</li><li>Authorized recognition targets and presets</li><li>Scene assets and terrain information</li><li>Robot, sensor and locomotion parameters</li></ul></article>
+            <article><span class="section-index">IMPLEMENTED CAPABILITIES</span><h3>What the platform provides</h3><ul class="check-list"><li>Natural-language interpretation using a repository-local Qwen3-4B model executed through llama.cpp</li><li>Deterministic fallback handling for supported instructions</li><li>A strict mission schema of predefined navigation, patrol, capture, inspection, return and reporting tasks</li><li>Semantic resolution of named rooms and operational areas</li><li>Deterministic route planning and guarded goal execution</li><li>Independent Stop, cancellation, manual takeover and recovery paths</li><li>Camera and LiDAR visualization through a browser interface</li><li>Evidence identity across mission, robot, task, location, viewpoint, timestamp and pose</li><li>Findings-report generation when explicitly requested</li><li>Single-robot operation and scenario-bounded coordination of four simulated robots</li></ul></article>
+            <article><span class="section-index">AUTHORITY BOUNDARY</span><h3>What the model cannot do</h3><ul class="check-list deny-list"><li>Publish actuator commands</li><li>Invent physical coordinates</li><li>Generate executable code</li><li>Choose arbitrary filesystem paths</li><li>Bypass configured mission constraints</li></ul><p>Deterministic components validate each proposal, resolve physical details and decide whether execution is permitted. During execution the operator supervises from a unified browser workspace containing the semantic map, three-dimensional scene, live camera feeds, LiDAR visualization, task state, mission progress and collected evidence.</p></article>
           </div>
         </section>
 
-        <section class="boundary-callout"><div><span class="section-index">EVIDENCE BOUNDARY</span><h2>An integrated simulation prototype—not a physical safety claim.</h2></div><p>The repository demonstrates controlled LLM-to-ROS 2 execution in MuJoCo. Physical deployment still requires robot integration, localization, sensor calibration, hardware emergency-stop integration, cybersecurity and site-specific validation.</p></section>
+        <section>
+          <div class="section-heading"><div><span class="section-index">VALUE PROPOSITION</span><h2>One observable workflow</h2></div><p>The proposed value is a reduction in the technical effort required to request, supervise and document a robotic inspection. Operators communicate at the level of operational objectives, rooms and assets.</p></div>
+          <blockquote>Turn an inspection objective for a configured operational site, expressed in natural language, into a guarded and traceable ROS 2 mission—without requiring the operator to write robot commands, and without granting the language model physical control authority.</blockquote>
+          <div class="card-grid four-up">
+            <article class="info-card"><span class="card-number">01</span><h3>Accessibility</h3><p>Operational personnel can request supported missions without constructing ROS 2 command sequences.</p></article>
+            <article class="info-card"><span class="card-number">02</span><h3>Repeatability</h3><p>Inspections use configured routes, viewpoints and task contracts rather than an informal sequence.</p></article>
+            <article class="info-card"><span class="card-number">03</span><h3>Human authority</h3><p>Stop, cancellation, manual takeover and recovery remain independent of the language model.</p></article>
+            <article class="info-card"><span class="card-number">04</span><h3>Traceability</h3><p>Evidence is associated with the mission, robot, task, location, viewpoint, timestamp and measured pose that produced it.</p></article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">DIFFERENTIATION</span><h2>Distinguished from representative alternatives</h2></div><p>Each comparison identifies the typical limitation of an existing inspection approach and the specific way this initiative addresses it.</p></div>
+          <div class="method-table" role="table" aria-label="Differentiation from representative inspection approaches">
+            <div role="row"><strong role="columnheader">Approach</strong><strong role="columnheader">Typical limitation</strong><strong role="columnheader">Proposed differentiation</strong></div>
+            <div role="row"><span role="cell">Manual inspection</span><span role="cell">Requires a person to perform and document every patrol directly.</span><span role="cell">Supports repeatable simulated robot missions with automatically associated evidence while retaining human supervision.</span></div>
+            <div role="row"><span role="cell">Fixed scripted robot mission</span><span role="cell">A changed objective may require an engineer to edit or trigger a different predefined sequence.</span><span role="cell">Natural-language interpretation composes supported semantic tasks without changing physical execution interfaces.</span></div>
+            <div role="row"><span role="cell">Engineering-led ROS 2 control</span><span role="cell">Requires robotics knowledge from the mission author.</span><span role="cell">Presents rooms, assets and objectives through an operator-facing mission workspace.</span></div>
+            <div role="row"><span role="cell">Unrestricted LLM-to-robot control</span><span role="cell">Generative output may influence physical execution without a narrow authority boundary.</span><span role="cell">Restricts the model to semantic proposals and keeps coordinates, routing, safety checks and execution deterministic.</span></div>
+            <div role="row"><span role="cell">Disconnected evidence workflow</span><span role="cell">Images and findings may require manual association with their mission.</span><span role="cell">Preserves evidence provenance across runtime, location, mission, robot, task, viewpoint, timestamp and pose.</span></div>
+          </div>
+        </section>
+
+        <section class="assumption-note"><strong>Deployment characteristic</strong><p>Repository-local language and vision models reduce dependence on public inference services, supporting future on-premises evaluation where facility imagery, maps and operational instructions should remain inside the deployment environment. This is a prototype deployment characteristic, not yet a validated customer purchasing requirement.</p></section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">VALUE MEASUREMENT</span><h2>Benefits framed as testable hypotheses</h2></div><p>Customer value has not yet been measured at a physical site. Challenge results for mission completion, intervention and visual classification belong to the KPI deliverable; customer labour savings, return on investment and physical-site performance remain future pilot measurements.</p></div>
+          <div class="method-table" role="table" aria-label="Value hypotheses and evaluation measures">
+            <div role="row"><strong role="columnheader">Value hypothesis</strong><strong role="columnheader">Evaluation measure</strong><strong role="columnheader">Required comparison</strong></div>
+            <div role="row"><span role="cell">Easier mission creation</span><span role="cell">Time and operator actions required to request an accepted mission.</span><span role="cell">Natural-language workflow versus the existing engineering-led procedure.</span></div>
+            <div role="row"><span role="cell">Reliable execution</span><span role="cell">Mission completion rate and bounded failure reasons.</span><span role="cell">Repeated execution of a predefined mission suite.</span></div>
+            <div role="row"><span role="cell">Reduced supervision burden</span><span role="cell">Human-intervention rate and intervention type.</span><span role="cell">Interventions divided by attempted missions, with test interventions reported separately.</span></div>
+            <div role="row"><span role="cell">Reliable visible findings</span><span role="cell">False-positive and false-negative rates.</span><span role="cell">Qualified perception output versus labelled ground truth.</span></div>
+            <div role="row"><span role="cell">Complete evidence</span><span role="cell">Proportion of required viewpoints with attributed evidence.</span><span role="cell">Expected viewpoint set versus stored evidence records.</span></div>
+            <div role="row"><span role="cell">Faster documentation</span><span role="cell">Time from mission completion to an available findings report.</span><span role="cell">Proposed evidence workflow versus the current reporting procedure.</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">SCALABILITY</span><h2>Reuse the mission core; configure the deployment</h2></div><p>New sites still require mapping, inspection design, configuration and site-specific safety validation, but they do not require a new mission-control application.</p></div>
+          <div class="contract-columns">
+            <article><span class="section-index">REUSABLE CORE</span><h3>Shared across deployments</h3><ul class="check-list"><li>LLM interface and task schema</li><li>Mission state model and task compiler</li><li>Routing and safety logic</li><li>ROS 2 integration and operator interface</li><li>Perception workflow and evidence pipeline</li></ul></article>
+            <article><span class="section-index">SITE CONFIGURATION</span><h3>Defined for each operation</h3><ul class="check-list"><li>Semantic maps and traversable regions</li><li>Named rooms, zones and aliases</li><li>Patrol seeds and inspection viewpoints</li><li>Recognition targets and mission presets</li><li>Scene assets and terrain information</li><li>Robot, sensor and locomotion parameters</li></ul></article>
+          </div>
+          <div class="method-table" role="table" aria-label="Implemented reuse mechanisms and current evidence boundaries">
+            <div role="row"><strong role="columnheader">Dimension</strong><strong role="columnheader">Reusable mechanism</strong><strong role="columnheader">Current evidence and boundary</strong></div>
+            <div role="row"><span role="cell">Mission reuse</span><span role="cell">Shared semantic task schema and execution workflow.</span><span role="cell">Supports navigation, patrol, capture, inspection, return and reporting.</span></div>
+            <div role="row"><span role="cell">Environment reuse</span><span role="cell">Configuration-driven maps, rooms, routes, viewpoints and targets.</span><span role="cell">Demonstrated across warehouse, agricultural and scanned-location scenarios in the development repository.</span></div>
+            <div role="row"><span role="cell">Robot configuration</span><span role="cell">Robot and locomotion profiles are separate from the language task model.</span><span role="cell">Multiple simulation actors are selectable; physical portability is not yet demonstrated.</span></div>
+            <div role="row"><span role="cell">Fleet extension</span><span role="cell">Namespaces, task allocation, room ownership and route coordination.</span><span role="cell">Demonstrated with four robots in one bounded MuJoCo warehouse; wider production scale is not established.</span></div>
+            <div role="row"><span role="cell">Model deployment</span><span role="cell">Repository-local, hash-verified language and vision assets.</span><span role="cell">Supports repeatable local setup but depends on suitable host compute.</span></div>
+          </div>
+        </section>
+
+        <section class="boundary-callout"><div><span class="section-index">EVIDENCE BOUNDARY</span><h2>An integrated simulation prototype—not a physical safety claim.</h2></div><p>The repository demonstrates software reuse through configuration and controlled LLM-to-ROS 2 execution in MuJoCo, not production-scale autonomous deployment. The next validation step is to measure customer baseline effort and the engineering time required to configure an additional site and robot. Physical deployment still requires robot integration, localization, sensor calibration, hardware emergency-stop integration, cybersecurity and site-specific validation.</p></section>
       </div>
     </section>
 
     <section id="panel-architecture" class="page-panel" role="tabpanel" aria-labelledby="tab-architecture" data-panel="architecture" hidden>
       <div class="page-hero">
         <div><span class="criterion-weight">Criterion 02 · 20%</span><h1>Solution<br>Architecture</h1></div>
-        <p>Semantic interpretation is deliberately separated from physical execution. The LLM proposes what; deterministic components decide whether and how.</p>
+        <p>Semantic interpretation is deliberately separated from physical execution. The LLM may propose what the robot should do; deterministic components decide whether the proposal is valid and how it can be executed.</p>
       </div>
       <div class="content-shell section-stack">
         <section class="architecture-board" aria-labelledby="architecture-heading">
@@ -205,17 +249,45 @@
             <span class="flow-arrow">↓</span>
             <article class="llm-layer"><small>03 · SEMANTIC PROPOSAL ONLY</small><h3>Intent Interpretation</h3><p>Qwen3-4B through llama.cpp with deterministic fallback</p></article>
             <span class="flow-arrow">↓</span>
-            <article><small>04 · VALIDATION</small><h3>Schema & Deterministic Planner</h3><p>Task validation, semantic resolution and mission revision checks</p></article>
+            <article><small>04 · DETERMINISTIC VALIDATION</small><h3>Schema & Mission Model</h3><p>Task fields, rooms, ordering, instruction alignment, revision and export intent</p></article>
             <span class="flow-arrow">↓</span>
-            <article><small>05 · ORCHESTRATION</small><h3>Mission Executive</h3><p>Finite task compilation, queue lifecycle and progress monitoring</p></article>
+            <article><small>05 · ORCHESTRATION</small><h3>Mission Executive & Skill Library</h3><p>Revision-checked queue, finite task compilation and progress monitoring</p></article>
             <span class="flow-arrow">↓</span>
             <article><small>06 · PHYSICAL AUTHORITY</small><h3>Routing & Safety Layer</h3><p>Route validation, clearance, bounded retry and cancellation</p></article>
             <span class="flow-arrow">↓</span>
-            <article><small>07 · EXECUTION</small><h3>ROS 2 Skills & MuJoCo Runtime</h3><p>Navigation, perception, odometry, camera, LiDAR and status</p></article>
+            <article><small>07 · PROCESS BOUNDARY</small><h3>ROS 2 Nodes, Topics & Services</h3><p>Navigation, perception, status, sensor and independent control interfaces</p></article>
+            <span class="flow-arrow">↓</span>
+            <article><small>08 · EXECUTION</small><h3>MuJoCo Robot Runtime</h3><p>Motion, odometry, camera, LiDAR and navigation feedback</p></article>
           </div>
           <div class="support-layers">
             <article><small>HUMAN AUTHORITY</small><h3>Independent Control Paths</h3><p>Stop, cancellation, manual takeover and recovery do not wait for the LLM.</p></article>
-            <article><small>OUTCOMES</small><h3>Perception & Evidence</h3><p>Visual analysis, provenance, qualification and PDF reporting.</p></article>
+            <article><small>OPTIONAL FOUR-ROBOT PATH</small><h3>Fleet Coordination</h3><p>Robot allocation, room ownership, route admission, peer coordination and charger reservations.</p></article>
+            <article><small>OUTCOMES</small><h3>Perception & Evidence</h3><p>Authorized visual analysis, qualification, identity-bound evidence and PDF reporting.</p></article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">AUTHORITY BOUNDARY</span><h2>Proposal authority is not execution authority</h2></div><p>No model response can override a deterministic rejection. Operator safety controls remain available without inference.</p></div>
+          <div class="contract-columns architecture-authority">
+            <article>
+              <span class="section-index">MODEL OUTPUT</span>
+              <h3>Seven semantic task categories only</h3>
+              <div class="task-vocabulary" aria-label="Task vocabulary available to the language model">
+                <code>navigate_room</code><code>navigate_point</code><code>patrol_room</code><code>capture_room</code><code>inspect_room</code><code>return_station</code><code>report</code>
+              </div>
+              <p>Qwen3-4B runs locally through llama.cpp with temperature zero, reasoning disabled and a strict JSON response schema. A bounded deterministic parser handles supported safety commands and provides a fallback for ordinary instructions.</p>
+            </article>
+            <article>
+              <span class="section-index">DETERMINISTIC OWNERSHIP</span>
+              <h3>Everything that can affect the robot or filesystem</h3>
+              <ul class="check-list">
+                <li>Schema, task order, semantic-map and instruction-alignment validation</li>
+                <li>Mission revisions, queue changes and runtime-generation identity</li>
+                <li>Coordinates, route selection, fleet allocation and physical goal admission</li>
+                <li>Clearance decisions, cancellation, Stop, manual takeover and recovery</li>
+                <li>Perception qualification and persistent media or report authorization</li>
+              </ul>
+            </article>
           </div>
         </section>
 
@@ -227,9 +299,10 @@
             <div role="row"><span role="cell">Intent interpretation</span><span role="cell">Convert natural language into a supported semantic mission proposal.</span><span role="cell"><code>llm_planner.py</code><br><code>intent.py</code></span></div>
             <div role="row"><span role="cell">Schema and mission model</span><span role="cell">Restrict task types and fields, validate values and apply revision-checked mission changes.</span><span role="cell"><code>schema.py</code><br><code>mission.py</code></span></div>
             <div role="row"><span role="cell">Executive and skill compiler</span><span role="cell">Compile accepted tasks into finite steps, manage lifecycle and record outcomes.</span><span role="cell"><code>task_execution.py</code><br><code>executive_node.py</code></span></div>
-            <div role="row"><span role="cell">Routing and safety</span><span role="cell">Resolve valid routes and reject stale, blocked or unsupported goals before execution.</span><span role="cell"><code>planner.py</code><br><code>navigation_safety.py</code></span></div>
-            <div role="row"><span role="cell">Perception and evidence</span><span role="cell">Process authorized visual requests and preserve qualification and report provenance.</span><span role="cell"><code>perception_worker_node.py</code><br><code>reporting.py</code></span></div>
-            <div role="row"><span role="cell">Robot runtime</span><span role="cell">Simulate motion and publish navigation status, odometry, camera and LiDAR data.</span><span role="cell"><code>simulator_node.py</code><br><code>camera_pipeline.py</code></span></div>
+            <div role="row"><span role="cell">Routing and safety</span><span role="cell">Resolve routes, check clearance and reject stale, blocked or unsupported goals.</span><span role="cell"><code>planner.py</code><br><code>route_alternatives.py</code><br><code>navigation_safety.py</code></span></div>
+            <div role="row"><span role="cell">Fleet coordination</span><span role="cell">Allocate robots and coordinate rooms, routes, peers and chargers.</span><span role="cell"><code>fleet_coordinator_node.py</code><br><code>fleet_scheduler.py</code></span></div>
+            <div role="row"><span role="cell">Perception and evidence</span><span role="cell">Process authorized visual requests and preserve evidence identity, qualification and report provenance.</span><span role="cell"><code>perception_worker_node.py</code><br><code>perception_validation.py</code><br><code>reporting.py</code></span></div>
+            <div role="row"><span role="cell">Robot runtime</span><span role="cell">Simulate locomotion and publish odometry, camera, LiDAR and navigation status.</span><span role="cell"><code>simulator_node.py</code><br><code>fleet_simulator_node.py</code></span></div>
           </div>
         </section>
 
@@ -238,11 +311,11 @@
           <ol class="execution-steps">
             <li><span>01</span><h3>Bind context</h3><p>Attach the request to the active runtime, location and mission revision.</p></li>
             <li><span>02</span><h3>Interpret</h3><p>Qwen3-4B or the deterministic fallback proposes supported semantic work.</p></li>
-            <li><span>03</span><h3>Validate</h3><p>Reject unknown fields, invalid values, unsupported tasks and unresolved locations.</p></li>
+            <li><span>03</span><h3>Validate</h3><p>Reject unknown fields, invalid values, unsupported tasks, unresolved locations and unauthorized exports.</p></li>
             <li><span>04</span><h3>Check revision</h3><p>Prevent a delayed planning response from overwriting a newer operator instruction.</p></li>
-            <li><span>05</span><h3>Compile</h3><p>Convert accepted tasks into finite navigation, capture, inspection or reporting steps.</p></li>
-            <li><span>06</span><h3>Execute</h3><p>Validate physical goals and publish only bounded commands through ROS 2.</p></li>
-            <li><span>07</span><h3>Attribute</h3><p>Update progress and bind accepted evidence to the active task, viewpoint, time and pose.</p></li>
+            <li><span>05</span><h3>Commit & compile</h3><p>Atomically apply the mission patch, then convert tasks into finite skill steps.</p></li>
+            <li><span>06</span><h3>Admit & execute</h3><p>Validate routes, fleet conflicts and physical goals before ROS 2 publication.</p></li>
+            <li><span>07</span><h3>Verify & attribute</h3><p>Require fresh identity-matched feedback and bind evidence to runtime, robot, mission, task, location, viewpoint, time and pose.</p></li>
           </ol>
         </section>
 
@@ -258,19 +331,24 @@
             <div role="row"><span role="cell"><code>/go2/demo/stop</code><br><code>/go2/nav/cancel</code><br><code>/go2/recover_upright</code></span><span role="cell"><code>Trigger</code> services</span><span role="cell">Provide stopping, navigation cancellation and recovery independently of inference.</span></div>
             <div role="row"><span role="cell"><code>/go2/demo/manual_override</code><br><code>/go2/manual/cmd_vel</code></span><span role="cell"><code>SetBool</code><br><code>Twist</code></span><span role="cell">Transfer and release bounded manual-control authority.</span></div>
           </div>
+          <p class="table-note">Fleet operation applies the same roles under robot-specific namespaces while the fleet coordinator maintains shared room, route and charging constraints.</p>
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">FAIL-CLOSED DESIGN</span><h2>Representative safeguards</h2></div><p>Unsupported or stale work stops before a physical goal is issued.</p></div>
+          <div class="section-heading"><div><span class="section-index">FAIL-CLOSED DESIGN</span><h2>Representative safeguards</h2></div><p>When a mandatory precondition is not satisfied, work is rejected, quarantined, held, made unavailable or retried only within a finite bound.</p></div>
           <div class="safety-grid">
-            <article><h3>Invalid model output</h3><p>Unknown tasks, fields and out-of-range values are rejected.</p></article>
-            <article><h3>Unknown location</h3><p>Semantic references must resolve exactly against the active map.</p></article>
-            <article><h3>Blocked route</h3><p>Goals require traversability and sufficient configured clearance.</p></article>
-            <article><h3>Stale identity</h3><p>Mission revision and runtime generation prevent delayed work from leaking forward.</p></article>
-            <article><h3>Operator intervention</h3><p>Independent controls cancel or hold active motion without LLM participation.</p></article>
+            <article><h3>Invalid model output</h3><p>Unknown tasks, fields or out-of-range values produce no robot command.</p></article>
+            <article><h3>Ambiguous location</h3><p>Semantic references must resolve exactly or the operator receives a clarification.</p></article>
+            <article><h3>Stale plan or runtime</h3><p>Mission revision and runtime generation reject or quarantine delayed work.</p></article>
+            <article><h3>Blocked or unsafe goal</h3><p>The robot holds unless an eligible bounded route alternative remains.</p></article>
             <article><h3>Missing model or sensor</h3><p>Readiness, freshness and timeout checks keep dependent functionality unavailable.</p></article>
+            <article><h3>Fleet conflict</h3><p>Room ownership, route admission and peer coordination make work wait, yield or reassign.</p></article>
+            <article><h3>Unqualified perception</h3><p>An unavailable or inconclusive result cannot become a positive or negative object claim.</p></article>
+            <article><h3>Operator intervention</h3><p>Stop, cancellation and manual ownership cancel or hold motion without LLM participation.</p></article>
           </div>
         </section>
+
+        <section class="boundary-callout"><div><span class="section-index">VALIDATION BOUNDARY</span><h2>Repeatable simulation architecture—not certified functional safety.</h2></div><p>ROS 2 Humble provides explicit process boundaries and standard interfaces; MuJoCo provides a reproducible environment for locomotion, navigation, camera and LiDAR integration. These controls constrain demonstrated simulation behavior, but they do not constitute physical-robot safety certification.</p></section>
       </div>
     </section>
 
@@ -368,6 +446,24 @@
           <div class="demo-copy"><span class="section-index">REPRESENTATIVE MISSION</span><h2>Receiving-dock inspection</h2><blockquote>“Inspect the receiving dock for barrels, save the evidence and produce a findings report.”</blockquote><p>The operator observes plan acceptance, route execution, camera evidence, mission progress and the terminal findings artifact from one browser workspace.</p></div>
         </section>
 
+        <section class="full-demo-card" aria-labelledby="full-demo-heading">
+          <div class="full-demo-copy">
+            <span class="section-index">FULL RECORDING</span>
+            <h2 id="full-demo-heading">Watch the complete demonstration</h2>
+            <p>The uncut submission recording follows the whole operator journey in one continuous take: choosing an operation, creating and running a mission, reviewing evidence, coordinating a four-robot fleet and reusing the mission core across deployments.</p>
+            <a class="button button-primary" data-full-demo-link href="https://eagleprojectssrl-my.sharepoint.com/:v:/g/personal/avarelas_eagleprojects_world/IQA8DNFOml-iSKdToeS_zh5WAbs4u4oOSs_feDqh2miq3Ac?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=2TYyuM" target="_blank" rel="noopener noreferrer">Watch the full MP4 demo <span aria-hidden="true">↗</span></a>
+            <small>Hosted on the team’s corporate OneDrive. The chapters below are excerpts from this same recording.</small>
+          </div>
+          <dl class="full-demo-facts">
+            <div><dt>Duration</dt><dd>15:01</dd></div>
+            <div><dt>Resolution</dt><dd>1920 × 1080</dd></div>
+            <div><dt>Frame rate</dt><dd>60 fps</dd></div>
+            <div><dt>Format</dt><dd>MP4 · H.264 / AAC</dd></div>
+            <div><dt>File size</dt><dd>102 MiB</dd></div>
+            <div><dt>Execution</dt><dd>MuJoCo via ROS 2</dd></div>
+          </dl>
+        </section>
+
         <section class="demo-library" aria-labelledby="demo-chapters-heading">
           <div class="section-heading demo-library-heading">
             <div><span class="section-index">RECORDED WALKTHROUGH</span><h2 id="demo-chapters-heading">Explore the platform chapter by chapter</h2></div>
@@ -432,14 +528,21 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
     <section id="panel-kpis" class="page-panel" role="tabpanel" aria-labelledby="tab-kpis" data-panel="kpis" hidden>
       <div class="page-hero">
         <div><span class="criterion-weight">Criterion 05 · 15%</span><h1>KPIs and<br>Results</h1></div>
-        <p>Measured results are reported with raw counts, documented conditions and an explicit simulation evidence boundary.</p>
+        <p>The final sealed campaign reports raw counts, fixed operational definitions, decision thresholds and an explicit simulation evidence boundary.</p>
       </div>
       <div class="content-shell section-stack">
         <section class="kpi-grid" data-kpi-grid>
           <article><span>MISSION COMPLETION</span><strong data-kpi="missionCompletion">20 / 20</strong><small>successful / attempted nominal missions; 5/5 in every scenario</small></article>
-          <article><span>UNPLANNED HUMAN INTERVENTION</span><strong data-kpi="humanIntervention">0% each</strong><small>0/15 single-robot missions · 0/5 fleet missions</small></article>
+          <article><span>MISSIONS WITH UNPLANNED INTERVENTION</span><strong data-kpi="humanIntervention">0 / 20</strong><small>0%; planned setup and safety supervision excluded</small></article>
           <article><span>FALSE POSITIVES</span><strong data-kpi="falsePositive">0 / 10</strong><small>qualified barrel queries / ground-truth negatives</small></article>
           <article><span>FALSE NEGATIVES</span><strong data-kpi="falseNegative">0 / 10</strong><small>qualified barrel queries / ground-truth positives</small></article>
+        </section>
+
+        <section class="kpi-audit-strip" aria-label="Sealed campaign identity and scope">
+          <article><small>EVALUATION MEDIUM</small><strong>MuJoCo</strong><span>Simulation only</span></article>
+          <article><small>TRIAL MATRIX</small><strong>4 × 5</strong><span>20 nominal missions</span></article>
+          <article><small>CAMPAIGN</small><strong>26 Aug 2026</strong><span>Frozen sealed evaluation</span></article>
+          <article><small>PACKAGE INTEGRITY</small><strong>6 / 6</strong><span>No hash mismatches</span></article>
         </section>
 
         <section>
@@ -450,6 +553,20 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
             <div role="row"><span role="cell">Maintenance Bay inspection for tool chest and air compressor</span><span role="cell">5 / 5 · 100%</span><span role="cell">72.848 / 77.332 / 83.594 s</span></div>
             <div role="row"><span role="cell">Receiving Dock inspection with findings PDF</span><span role="cell">5 / 5 · 100%</span><span role="cell">146.635 / 150.708 / 152.161 s</span></div>
             <div role="row"><span role="cell">Four-robot fleet warehouse inspection</span><span role="cell">5 / 5 · 100%</span><span role="cell">356.098 / 370.870 / 375.604 s</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">OPERATIONAL DEFINITIONS</span><h2>Every result has a fixed denominator and decision rule</h2></div><p>The workbook defines what counts, what is excluded and what result triggers investigation before interpreting the campaign.</p></div>
+          <div class="method-table" role="table" aria-label="KPI operational definitions and decision rules">
+            <div role="row"><strong role="columnheader">KPI and formula</strong><strong role="columnheader">Success criterion</strong><strong role="columnheader">Measurement boundary</strong></div>
+            <div role="row"><span role="cell">Successful nominal missions / attempted nominal missions</span><span role="cell">100%; investigate any run below 100%</span><span role="cell">All expected tasks, viewpoints and requested durable artifacts must succeed</span></div>
+            <div role="row"><span role="cell">Missions with ≥1 unplanned intervention / attempted missions</span><span role="cell">0%; investigate any unplanned intervention</span><span role="cell">Pre-run setup, passive observation and planned safety actions are excluded</span></div>
+            <div role="row"><span role="cell">FP / (FP + TN)</span><span role="cell">≤5%; investigate any safety-significant false positive</span><span role="cell">Final labelled negative <code>barrel</code>/<code>barrels</code> cases only</span></div>
+            <div role="row"><span role="cell">FN / (FN + TP)</span><span role="cell">≤5%; investigate any safety-significant false negative</span><span role="cell">Final labelled positive <code>barrel</code>/<code>barrels</code> cases only</span></div>
+            <div role="row"><span role="cell">Completed required viewpoints / required viewpoints</span><span role="cell">100%; any missing viewpoint triggers review</span><span role="cell">Requires an accepted evidence record for the configured inspection pose</span></div>
+            <div role="row"><span role="cell">Created requested images / expected requested images</span><span role="cell">100%; any missing durable image triggers review</span><span role="cell">Only instructions that explicitly requested permanent image retention</span></div>
+            <div role="row"><span role="cell">Generated requested reports / requested reports</span><span role="cell">100%; any missing requested PDF triggers review</span><span role="cell">Recorder-boundary availability; not browser rendering or full generation latency</span></div>
           </div>
         </section>
 
@@ -467,13 +584,15 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">PERCEPTION & INTERPRETATION</span><h2>Qualified scope, stated narrowly</h2></div><p>Classification results apply only to the authorized barrel class and equivalent <code>barrels</code> query in the frozen simulated scene and render configuration.</p></div>
-          <div class="method-table" role="table" aria-label="Perception qualification and instruction regression results">
+          <div class="section-heading"><div><span class="section-index">PERCEPTION & SUPPORTING CHECKS</span><h2>Qualified scope, stated narrowly</h2></div><p>Classification results apply only to the authorized barrel class and equivalent <code>barrels</code> query in the frozen simulated scene and render configuration.</p></div>
+          <div class="method-table" role="table" aria-label="Perception qualification and supplementary evaluation checks">
             <div role="row"><strong role="columnheader">Measure</strong><strong role="columnheader">Measured result</strong><strong role="columnheader">Boundary</strong></div>
             <div role="row"><span role="cell">Perception confusion matrix</span><span role="cell">TP 10 · TN 10 · FP 0 · FN 0</span><span role="cell">Two qualified query forms; five positive and five negative cases each</span></div>
             <div role="row"><span role="cell">Precision and recall</span><span role="cell">100% / 100%</span><span role="cell">Qualified barrel scope only; other objects and physical imagery remain unqualified, and calibration/final-case disjointness is not fully evidenced</span></div>
+            <div role="row"><span role="cell">Fleet conflict-free completion</span><span role="cell">5/5 · 100%</span><span role="cell">Supplementary result limited to the tested four-robot fleet scenario</span></div>
             <div role="row"><span role="cell">Instruction regression</span><span role="cell">37/37 cases · 100%</span><span role="cell">Supporting evidence; artifact did not match the active campaign configuration</span></div>
-            <div role="row"><span role="cell">Instruction latency</span><span role="cell">6.679 s mean · 18.324 s maximum</span><span role="cell">80% local-model backend coverage across the 30 cases that expected it</span></div>
+            <div role="row"><span role="cell">Local-model instruction coverage</span><span role="cell">24/30 · 80%</span><span role="cell">Coverage within the supplementary regression; not a mission-completion KPI</span></div>
+            <div role="row"><span role="cell">Instruction latency</span><span role="cell">6.679 s mean · 18.324 s maximum</span><span role="cell">Measured within the supplementary instruction regression</span></div>
           </div>
         </section>
 
@@ -482,13 +601,15 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
           <div class="method-table" role="table" aria-label="KPI evaluation protocol">
             <div role="row"><strong role="columnheader">Protocol element</strong><strong role="columnheader">Recorded condition</strong><strong role="columnheader">Evidence boundary</strong></div>
             <div role="row"><span role="cell">Runtime</span><span role="cell">ROS 2 Humble · Python 3.10.12 · MuJoCo 3.10.0 · Ubuntu 22.04 under WSL2</span><span role="cell">Simulation only</span></div>
-            <div role="row"><span role="cell">Hardware</span><span role="cell">AMD Ryzen 7 3700X · NVIDIA GeForce RTX 3070 8 GiB · approximately 16 GiB system memory</span><span role="cell">Documented evaluation machine</span></div>
+            <div role="row"><span role="cell">Hardware</span><span role="cell">AMD Ryzen 7 3700X · 16 logical cores · NVIDIA GeForce RTX 3070 8 GiB · approximately 15.58 GiB RAM</span><span role="cell">Documented evaluation machine</span></div>
             <div role="row"><span role="cell">Trial design</span><span role="cell">Five exact-wording trials for each of four scenarios</span><span role="cell">Three single-robot scenarios in one shared launch; each fleet trial used a fresh launch</span></div>
-            <div role="row"><span role="cell">Package integrity</span><span role="cell">6/6 KPI package manifests passed integrity validation</span><span role="cell">No hash mismatch and no uncommitted raw-log tail</span></div>
+            <div role="row"><span role="cell">Configuration</span><span role="cell">Single robot: guarded PGTT with locally qualified perception · Fleet: four robot-specific controllers</span><span role="cell">Results from the two configuration groups remain separate</span></div>
+            <div role="row"><span role="cell">Frozen identity</span><span role="cell"><code>8529f808adf42b3b3515627c3c3e9371455ba4cd</code></span><span role="cell">Git commit recorded by the nominal packages</span></div>
+            <div role="row"><span role="cell">Package integrity</span><span role="cell">6/6 KPI package manifests passed integrity validation</span><span role="cell">No hash mismatch and no uncommitted raw-log tail; logical completeness remained false</span></div>
           </div>
         </section>
 
-        <section class="boundary-callout"><div><span class="section-index">INCOMPLETE ACCEPTANCE</span><h2>Positive nominal verdict—not full automatic acceptance.</h2></div><p>The planned Stop, manual-control and recovery suite was not executed; formal fleet conflict-free completion remains unknown because every fleet observation contained telemetry gaps; the formal screenshot and operator-note sets are incomplete; no complete application-wide random seed was supplied; and no result establishes physical-robot safety or customer-site performance.</p></section>
+        <section class="boundary-callout"><div><span class="section-index">INCOMPLETE ACCEPTANCE</span><h2>Positive nominal verdict—not full automatic acceptance.</h2></div><p>The planned Stop, manual-control and recovery suite was not executed; formal screenshot evidence and operator notes are incomplete; logical package completeness therefore remained false despite valid package integrity; no complete application-wide random seed was supplied; and no result establishes physical-robot safety, universal perception performance or customer-site performance.</p></section>
       </div>
     </section>
 
@@ -514,7 +635,7 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
         <section class="business-metrics">
           <article><small>ESTIMATED DELIVERY COST</small><strong>€18,400</strong><span>Including 15% contingency</span></article>
           <article><small>DIRECT CONTRIBUTION</small><strong>€6,600</strong><span>Per initial pilot</span></article>
-          <article><small>CONTRIBUTION MARGIN</small><strong>26%</strong><span>Early-pilot assumption</span></article>
+          <article><small>CONTRIBUTION MARGIN</small><strong>26.4%</strong><span>Early-pilot assumption</span></article>
           <article><small>ANNUAL RECURRING PACKAGE</small><strong>€16,000</strong><span>Software and support</span></article>
         </section>
 
@@ -565,16 +686,53 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
         </section>
 
         <section>
-          <div class="section-heading"><div><span class="section-index">FIRST-YEAR SCENARIOS</span><h2>Transparent consequences, not sales forecasts</h2></div><p>A conversion means one pilot customer also purchases onboarding plus one annual software and support package within the same year.</p></div>
-          <div class="method-table" role="table" aria-label="Illustrative first-year revenue scenarios">
-            <div role="row"><strong role="columnheader">Scenario</strong><strong role="columnheader">Commercial activity</strong><strong role="columnheader">Illustrative economics</strong></div>
-            <div role="row"><span role="cell">Conservative</span><span role="cell">1 paid pilot · 0 production conversions</span><span role="cell">€25,000 revenue · €6,600 contribution · 26% margin · €0 year-end recurring revenue</span></div>
-            <div role="row"><span role="cell">Base</span><span role="cell">3 paid pilots · 1 production conversion</span><span role="cell">€99,000 revenue · €34,800 contribution · 35% margin · €16,000 year-end recurring revenue</span></div>
-            <div role="row"><span role="cell">Upside</span><span role="cell">6 paid pilots · 3 production conversions</span><span role="cell">€222,000 revenue · €84,600 contribution · 38% margin · €48,000 year-end recurring revenue</span></div>
+          <div class="section-heading"><div><span class="section-index">PRODUCTIZATION & OPERATING MODEL</span><h2>Separate sunk prototype effort from forward investment</h2></div><p>The three-year model adds the work required to turn the current demonstrator into a supportable product and keeps fixed operating costs separate from delivery costs.</p></div>
+          <div class="method-table" role="table" aria-label="Productization and operating assumptions">
+            <div role="row"><strong role="columnheader">Model element</strong><strong role="columnheader">Planning assumption</strong><strong role="columnheader">Treatment</strong></div>
+            <div role="row"><span role="cell">Existing prototype effort</span><span role="cell">160 person-days</span><span role="cell">Unverified reconstruction; treated as sunk effort in the forward model</span></div>
+            <div role="row"><span role="cell">Production hardening</span><span role="cell">120 person-days × €400 per day</span><span role="cell">€48,000 year-zero investment</span></div>
+            <div role="row"><span role="cell">Fixed operating overhead</span><span role="cell">€20,000 · €25,000 · €30,000</span><span role="cell">Applied in years one, two and three respectively</span></div>
+            <div role="row"><span role="cell">Third-party LLM consumption</span><span role="cell">€0 per mission in the base case</span><span role="cell">Local model; electricity and platform compute remain in other cost allowances</span></div>
           </div>
         </section>
 
-        <section class="boundary-callout"><div><span class="section-index">ILLUSTRATIVE CUSTOMER VALUE</span><h2>€43,750 baseline → €5,875 net annual benefit</h2></div><p>Assume a camera-instrumented facility performs four 1.25-hour inspection rounds per day, 250 working days, at €35 per hour. A 50% reduction in active human time saves €21,875; after €16,000 annual software and support, €5,875 remains. Under these assumptions, the €8,000 onboarding fee pays back in approximately 16 months. Robot hardware and physical integration remain excluded.</p></section>
+        <section class="business-metrics" aria-label="Three-year base-case summary">
+          <article><small>PRODUCTION HARDENING</small><strong>€48k</strong><span>One-time year-zero investment</span></article>
+          <article><small>3-YEAR BASE REVENUE</small><strong>€795k</strong><span>Illustrative commercial model</span></article>
+          <article><small>3-YEAR BASE NET CASH</small><strong>€207.4k</strong><span>After hardening and fixed overhead</span></article>
+          <article><small>BASE CASH BREAK-EVEN</small><strong>≈18 mo</strong><span>Linear monthly approximation</span></article>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">THREE-YEAR SCENARIOS</span><h2>Transparent consequences, not sales forecasts</h2></div><p>Each scenario applies the same pilot, onboarding and recurring-package unit economics. Net cash includes the €48,000 production-hardening investment and three years of fixed operating overhead.</p></div>
+          <div class="method-table" role="table" aria-label="Illustrative three-year business scenarios">
+            <div role="row"><strong role="columnheader">Scenario</strong><strong role="columnheader">Three-year activity</strong><strong role="columnheader">Illustrative outcome</strong></div>
+            <div role="row"><span role="cell">Conservative</span><span role="cell">6 pilots · 2 new sites · 1 renewal</span><span role="cell">€214,000 revenue · −€42,400 net cash · no break-even within 36 months</span></div>
+            <div role="row"><span role="cell">Base</span><span role="cell">19 pilots · 10 new sites · 5 renewals</span><span role="cell">€795,000 revenue · €207,400 net cash · break-even around month 18</span></div>
+            <div role="row"><span role="cell">Upside</span><span role="cell">38 pilots · 19 new sites · 12 renewals</span><span role="cell">€1,598,000 revenue · €544,800 net cash · break-even around month 9</span></div>
+          </div>
+        </section>
+
+        <section class="boundary-callout"><div><span class="section-index">ILLUSTRATIVE CUSTOMER VALUE</span><h2>€43,750 baseline → €5,875 net annual benefit</h2></div><p>Assume a camera-instrumented facility performs four 1.25-hour inspection rounds per day, 250 working days, at €35 per hour. A 50% reduction in active human time saves €21,875; after €16,000 annual software and support, €5,875 remains. Under these assumptions, the €8,000 onboarding fee pays back in approximately 16.3 months. Compatible robot hardware and physical integration remain excluded.</p></section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">SENSITIVITY</span><h2>The result depends most on realized value and delivery efficiency</h2></div><p>The workbook varies one assumption at a time. These checks expose where customer economics or vendor contribution can fail before commercial validation.</p></div>
+          <div class="method-table" role="table" aria-label="Business-case sensitivity analysis">
+            <div role="row"><strong role="columnheader">Variable</strong><strong role="columnheader">Downside</strong><strong role="columnheader">Base → upside</strong></div>
+            <div role="row"><span role="cell">Customer active-time reduction</span><span role="cell">35% → −€688 annual net benefit; no payback</span><span role="cell">50% → 16.3-month payback · 65% → 7.7 months</span></div>
+            <div role="row"><span role="cell">Specialist labour rate</span><span role="cell">€60/hour → €21,620 pilot cost · €3,380 contribution</span><span role="cell">€50/hour → €6,600 contribution · €40/hour → €9,820</span></div>
+            <div role="row"><span role="cell">Paid LLM usage</span><span role="cell">€0.25 × 1,000 missions/site/year → €10,750 recurring contribution</span><span role="cell">Local base case at €0/mission → €11,000</span></div>
+            <div role="row"><span role="cell">Pilot price</span><span role="cell">€22,000 → €3,600 contribution</span><span role="cell">€25,000 → €6,600 · €28,000 → €9,600</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-heading"><div><span class="section-index">HARDWARE & MAINTENANCE BOUNDARY</span><h2>Physical deployment is an optional, unquoted budget</h2></div><p>The simulation-first pilot includes a €2,000 compute, travel and materials allowance. A physical deployment requires a separate site-specific quotation and is excluded from vendor forecasts and the compatible-hardware customer ROI case.</p></div>
+          <div class="contract-columns">
+            <article><span class="section-index">OPTIONAL PHYSICAL BUDGET</span><h3>€35,000 placeholder subtotal</h3><ul class="check-list"><li>Robot platform: €25,000</li><li>Sensors: €3,500</li><li>Edge computer: €2,000</li><li>Network and safety equipment: €4,500</li></ul></article>
+            <article><span class="section-index">ONGOING HARDWARE COST</span><h3>€3,500 per year</h3><p>A 10% annual maintenance placeholder is applied to the optional physical-hardware subtotal. All component values are planning assumptions, not supplier quotations.</p></article>
+          </div>
+        </section>
 
         <section>
           <div class="section-heading"><div><span class="section-index">SCALING LOGIC</span><h2>Standardize configuration before scaling sales</h2></div><p>The business becomes scalable only when later sites reuse the mission contracts, interface and onboarding process instead of becoming independent engineering projects.</p></div>
@@ -598,7 +756,7 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
           </div>
         </section>
 
-        <section class="assumption-note"><strong>Evidence boundary</strong><p>These figures are planning assumptions, not customer quotations or validated forecasts. Robot hardware, physical integration, certification, insurance and maintenance are excluded.</p></section>
+        <section class="assumption-note"><strong>Evidence boundary</strong><p>These figures are planning assumptions, not customer quotations, signed revenue or validated forecasts. The team has no production-readiness evidence or supplier quotations. Robot hardware, physical integration, certification, insurance and maintenance are excluded unless explicitly shown as optional placeholders.</p></section>
       </div>
     </section>
   </main>
@@ -606,9 +764,9 @@ ros2 launch go2_ai_demo mission_portal.launch.py \
   <footer class="site-footer">
     <div><strong data-team-name>Duckster Team</strong><span>AI Beauty Contest</span></div>
     <div>
-      <a data-report-link href="assets/report/AI_Beauty_Contests_v2.pdf" target="_blank" rel="noopener">Report</a>
-      <a class="footer-repo" href="https://github.com/Duckster-Team/AI_Beauty_Contest" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      <a href="attribution.html">Attribution</a>
+      <a class="footer-repo" href="https://gitlab.eagleprojects.cloud/beauthy-contest-phisical-ai/team-5-proposal" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 0 0-.867 0L16.418 9.45H7.582L4.919 1.263a.455.455 0 0 0-.869.001L1.386 9.45.044 13.587a.924.924 0 0 0 .331 1.023L12 23.054l11.625-8.444a.92.92 0 0 0 .33-1.023"/></svg>
         <span>Repository</span>
       </a>
     </div>

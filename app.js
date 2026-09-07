@@ -206,8 +206,8 @@
     }));
   }
 
-  document.querySelectorAll("[data-report-link]").forEach((link) => {
-    if (config.reportUrl) link.href = config.reportUrl;
+  document.querySelectorAll("[data-full-demo-link]").forEach((link) => {
+    if (config.fullDemoUrl) link.href = config.fullDemoUrl;
   });
 
   Object.entries(config.kpis || {}).forEach(([key, value]) => {
